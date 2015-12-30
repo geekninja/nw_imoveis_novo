@@ -1,34 +1,4 @@
 .noo-wrapper
-  -# / START MAP HORIZONTAL
-  -# %section#search_map_horizontal.wrap.noo_advanced_search_property.horizontal
-  -#   .noo-map
-  -#     #gmap
-  -#     .gmap-search
-  -#       %input#gmap_search_input{:autocomplete => "on", :placeholder => "Pesquisar", :type => "text"}/
-  -#     .gmap-control
-  -#       %a.gmap-mylocation{:href => "#"}
-  -#         %i.fa.fa-map-marker>
-  -#         Minha Localização
-  -#       %a.gmap-full{:href => "#"}
-  -#         %i.fa.fa-expand
-  -#       %a.gmap-prev{:href => "#"}
-  -#         %i.fa.fa-angle-left
-  -#       %a.gmap-next{:href => "#"}
-  -#         %i.fa.fa-angle-right
-  -#     .gmap-zoom
-  -#       %a.zoom-in{:href => "#"}
-  -#         %i.fa.fa-plus
-  -#       %a.zoom-out{:href => "#"}
-  -#         %i.fa.fa-minus
-  -#     .gmap-loading
-  -#       Carregando Mapa
-  -#       .gmap-loader
-  -#         .rect1
-  -#         .rect2
-  -#         .rect3
-  -#         .rect4
-  -#         .rect5
-  -#
   %section#search-box.wrap.search-box
     = render 'layouts/site/search'
   .container.noo-mainbody
@@ -108,28 +78,3 @@
                         %a{:href => "#{property.link_tour}"}
                           %img{:alt => "", :src => "/images/icon/icon-360.png"}/
                 .clearfix
-                / START PAGINATION NAVIGATION
-                -# %nav.pagination-nav
-                -#   %ul.pagination.list-center
-                -#     %li
-                -#       %a.prev.page-numbers{:href => "#"}
-                -#         %i.fa.fa-angle-left
-                -#     %li
-                -#       %span.page-numbers.current 1
-                -#     %li
-                -#       %a.page-numbers{:href => "#"} 2
-                -#     %li
-                -#       %span.page-dots
-                -#         %i.fa.fa-ellipsis-h
-                -#     %li
-                -#       %a.page-numbers{:href => "#"} 7
-                -#     %li
-                -#       %a.page-numbers{:href => "#"} 8
-                -#     %li
-                -#       %a.next.page-numbers{:href => "#"}
-                -#         %i.fa.fa-angle-right
-                / END PAGINATION NAVIGATION
-              / END PROPERTIES CONTENT
-        / END MAIN CONTENT
-  / END NOO MAINBODY
-/ END NOO WRAPPER

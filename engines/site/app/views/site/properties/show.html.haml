@@ -14,16 +14,6 @@
                 = @property.number
                 = @property.block
                 = @property.region
-            -# %ul.social-list.property-share.clearfix
-            -#   %li
-            -#     %a{:href => "#", :target => "_blank", :title => "Facebook"}
-            -#       %i.fa.fa-facebook
-            -#   %li
-            -#     %a{:href => "#", :target => "_blank", :title => "Twitter"}
-            -#       %i.fa.fa-twitter
-            -#   %li
-            -#     %a{:href => "#", :target => "_blank", :title => "Google +"}
-            -#       %i.fa.fa-google-plus
             .property-featured.clearfix
               .images
                 .caroufredsel-wrap
@@ -108,118 +98,15 @@
                       %span.glyphicon.glyphicon-map-marker
                       Confira o tour 360
             .property-feature{:style => "overflow: hidden;"}
-              %h4.property-feature-title Vendedoras
+              %h4.property-feature-title Venda
               - @property.property_sellers.each do |seller|
                 .col-sm-6.col-md-2.item-col
                   %img.img-responsive.img-100{:src => "#{seller.logo_path}"}/
             .property-feature{:style => "overflow: hidden;"}
-              %h4.property-feature-title Construtoras
+              %h4.property-feature-title Construção
               - @property.property_constructors.each do |constructor|
                 .col-sm-6.col-md-2.item-col
                   %img.img-responsive.img-100{:src => "#{constructor.logo_path}"}/
-            -# .property-map
-            -#   %h4.property-map-title Localização do Imóvel
-            -#   .property-map-content
-            -#     .property-map-search
-            -#       %input#property_map_search_input{:autocomplete => "off", :placeholder => "Pesquisar", :type => "text"}/
-            -#     #property-map-7292.property-map-box{"data-latitude" => "-15.794731", "data-longitude" => "-47.882881"}
-          / END ARTICLE PROPERTY
-          / START AGENT PROPERTY
-          .agent-property
-            .agent-property-title
-              %h3 Contato
-            .agents.grid.clearfix
-              %article.hentry
-                .agent-featured
-                  %a.content-thumb{:href => "http://wp.nootheme.com/citilights/agents/john-doe/"}
-                    %img.attachment-agent-thumb{:alt => "", :src => "/images/agent/agent1.jpg"}/
-                .agent-wrap
-                  .agent-summary
-                    .agent-info
-                      %div
-                        %i.fa.fa-phone
-                        = @property.project.client.telephone
-                      %div
-                        %i.fa.fa-tablet
-                        = @property.project.client.celphone
-                      %div
-                        %i.fa.fa-envelope-square>
-                        = @property.project.client.email
-                    -# .agent-desc
-                    -#   %ul.social-list.agent-social.clearfix
-                    -#     %li
-                    -#       %a{:href => "#", :target => "_blank", :title => "Facebook"}
-                    -#         %i.fa.fa-facebook
-                    -#     %li
-                    -#       %a{:href => "#", :target => "_blank", :title => "Twitter"}
-                    -#         %i.fa.fa-twitter
-                    -#     %li
-                    -#       %a{:href => "#", :target => "_blank", :title => "Google +"}
-                    -#         %i.fa.fa-google-plus
-                    -#   .agent-action
-                    -#     %a{:href => "#"}
-                    -#       = @property.project.client.username
-              .conact-agent
-                %form#conactagentform{:method => "post", :role => "form"}
-                  .form-group
-                    %input.form-control{:name => "name", :placeholder => "Seu Nome *", :type => "text"}/
-                  .form-group
-                    %input.form-control{:name => "email", :placeholder => "Seu Email *", :type => "email"}/
-                  .form-group
-                    %textarea.form-control{:name => "message", :placeholder => "Mensagem *"}
-                  .form-action
-                    %button.btn.btn-default{:type => "submit"} Enviar Mensagem
-          -# .similar-property
-          -#   .similar-property-title
-          -#     %h3 Mais por Via Engenharia
-          -#   .similar-property-content
-          -#     .properties.grid.clearfix
-          -#       .properties-content
-          -#         %article.hentry
-          -#           .property-featured
-          -#             %a.content-thumb{:href => "#"}
-          -#               %img{:alt => "", :src => "/images/property/property1.jpg"}/
-          -#           .property-wrap
-          -#             %h2.property-title
-          -#               %a{:href => "#", :title => "Exemplo de endereço"} Exemplo de Endereço
-          -#             .property-summary
-          -#               .property-detail
-          -#                 .size
-          -#                   %span 1304 M²
-          -#                 .bathrooms
-          -#                   %span 2
-          -#                 .bedrooms
-          -#                   %span 3
-          -#               .property-info
-          -#                 .property-price
-          -#                   %span
-          -#                     %span.amount R$5,109
-          -#                     \/mês
-          -#                 .property-action
-          -#                   %a{:href => "#"} Mais Detalhes
-          -#         %article.hentry
-          -#           .property-featured
-          -#             %a.content-thumb{:href => "#/"}
-          -#               %img{:alt => "", :src => "/images/property/property1.jpg"}/
-          -#           .property-wrap
-          -#             %h2.property-title
-          -#               %a{:href => "#", :title => "Exemplo de endereço"} Exemplo de Endereço
-          -#             .property-summary
-          -#               .property-detail
-          -#                 .size
-          -#                   %span 531 M²
-          -#                 .bathrooms
-          -#                   %span 3
-          -#                 .bedrooms
-          -#                   %span 5
-          -#               .property-info
-          -#                 .property-price
-          -#                   %span
-          -#                     %span.amount R$4,200
-          -#                     \/mês
-          -#                 .property-action
-          -#                   %a{:href => "#"} Mais Detalhes
-          / END SIMILAR PROPERTY
         / END MAIN CONTENT
         / START SIDEBAR
         .noo-sidebar.noo-sidebar-right.col-xs-12.col-md-4

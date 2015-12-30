@@ -984,8 +984,8 @@
 }
 
 .recent-properties .recent-properties-content .property-row:last-child .hentry .property-category {
-	right: 15px;
-	left: auto;
+	/*right: 15px;
+	left: auto;*/
 }
 
 .recent-properties .caroufredsel-next,

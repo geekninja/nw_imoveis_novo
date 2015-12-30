@@ -9,7 +9,10 @@
 
 */
 
-
+.search-box .gsearch{
+	background-image:url('/images/fullbanner_home.png')!important;
+	width: 100%;
+}
 
 /* --------------------------------------------------------------------- */
 /* 1. HOME SLIDER

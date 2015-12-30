@@ -4,198 +4,76 @@
   %section#our-partners.wrap.our-partners
     .container
       .section-title
-        %h3 Patrocinados
+        %h3 Busca Exclusiva
       .our-partners-inner
         .row
         - Button.principal.order(:order).each do |button|
           .col-sm-6.col-md-2.item-col
             = link_to image_tag(button.image_path), properties_path(link_client: button.link),class: 'img-item'
-  %section#recent-properties-slider.wrap.recent-properties.recent-properties-slider
+  %section#recent-.wrap.recent-properties
     .container
       .recent-properties-inner
         .section-title
           %h3 Imóveis Destaques
         .recent-properties-content
-          .caroufredsel-wrap
-            - @properties = Property.where(featured: true).limit(8).order(:created_at)
-            - if @properties.present?
-              %ul
-                %li
-                  .property-row
-                    - @properties[0..1].each do |featured|
-                      %article.hentry.has-featured
-                        .property-featured
-                          %a.content-thumb{:href => "#{property_path(featured)}"}
-                            %img.attachment-property-thumb.featured-thumb-home{:alt => "", :src => "#{featured.thumb? ? featured.thumb : '/images/property/property1.jpg'}"}/
-                          %span.property-category
-                            %a{:href => "#{property_path(featured)}"}
-                              = featured.name
-                          .property-detail
-                            .size
-                              %span
-                                = featured.area
-                                M²
-                            .bedrooms
-                              %span
-                                = featured.rooms
-                            .bathrooms
-                              %span
-                                = featured.suit
-                        .property-wrap
-                          %h2.property-title
-                            %a{:href => "#{property_path(featured)}", :title => "#{featured.name}"}
-                              = featured.group
-                              = featured.number
-                              = featured.block
-                          .property-excerpt
-                            %p
-                              = featured.description
-                        .property-summary
-                          .property-info
-                            .property-price
-                              %span
-                                %span.amount
-                                  = number_to_currency featured.value
-                            .property-action
-                              %a{:href => "#{property_path(featured)}"} Mais Detalhes
-                  .property-row
-                    - @properties[2..3].each do |featured|
-                      %article.hentry.has-featured
-                        .property-featured
-                          %a.content-thumb{:href => "#{property_path(featured)}"}
-                            %img.attachment-property-thumb.featured-thumb-home{:alt => "", :src => "#{featured.thumb? ? featured.thumb : '/images/property/property1.jpg'}"}/
-                          %span.property-category
-                            %a{:href => "#{property_path(featured)}"}
-                              = featured.name
-                          .property-detail
-                            .size
-                              %span
-                                = featured.area
-                                M²
-                            .bedrooms
-                              %span
-                                = featured.rooms
-                            .bathrooms
-                              %span
-                                = featured.suit
-                        .property-wrap
-                          %h2.property-title
-                            %a{:href => "#{property_path(featured)}", :title => "#{featured.name}"}
-                              = featured.group
-                              = featured.number
-                              = featured.block
-                          .property-excerpt
-                            %p
-                              = featured.description
-                        .property-summary
-                          .property-info
-                            .property-price
-                              %span
-                                %span.amount
-                                  = number_to_currency featured.value
-                            .property-action
-                              %a{:href => "#{property_path(featured)}"} Mais Detalhes
-            %a.caroufredsel-prev{:href => "#"}
-            %a.caroufredsel-next{:href => "#"}
-  %section#our-sevices.wrap.our-sevices
-    .container
-      .parallax
-        .bg.parallax-bg
-        .overlay
-        .our-sevices-content
-          .row.clearfix
-            .col-xs-12.col-sm-4.our-sevices-col
-              %span.service-icon
-                %i.fa.fa-home
-              %hr.noo-gap/
-              .text-block
-                %h5 Os melhores Imóveis
-                %p
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae nibh at tortor maximus ultrices.
-                  %br>/
-                  Lorem ipsum dolor sit amet.
-                %p
-                  %a.icon-right{:href => "#"}
-                    Lorem ipsum dolor sit amet
-                    %i.fa.fa-arrow-circle-o-right
-            .col-xs-12.col-sm-4.our-sevices-col
-              %span.service-icon
-                %i.fa.fa-thumbs-o-up
-              %hr.noo-gap/
-              .text-block
-                %h5 Compartilhe
-                %p
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae nibh at tortor maximus ultrices.
-                  %br>/
-                  Lorem ipsum dolor sit amet.
-                %p
-                  %a.icon-right{:href => "#"}
-                    Lorem ipsum dolor sit amet
-                    %i.fa.fa-arrow-circle-o-right
-            .col-xs-12.col-sm-4.our-sevices-col
-              %span.service-icon
-                %i.fa.fa-star
-              %hr.noo-gap/
-              .text-block
-                %h5 Favorite
-                %p
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae nibh at tortor maximus ultrices.
-                  %br>/
-                  Lorem ipsum dolor sit amet.
-                %p
-                  %a.icon-right{:href => "#"}
-                    Lorem ipsum dolor sit amet
-                    %i.fa.fa-arrow-circle-o-right
-  %section#testimonial.wrap.testimonial
-    .container
-      .testimonial-inner
-        .section-title
-          %h3 Depoimentos
-        .testimonial-content
-          #carousel-testimonial.carousel.slide
-            %ol.carousel-indicators
-              %li.active{"data-slide-to" => "0", "data-target" => "#carousel-testimonial"}
-              %li{"data-slide-to" => "1", "data-target" => "#carousel-testimonial"}
-              %li{"data-slide-to" => "2", "data-target" => "#carousel-testimonial"}
-              %li{"data-slide-to" => "3", "data-target" => "#carousel-testimonial"}
-            .carousel-inner
-              .item.active
-                .slide-content
-                  .testimonial-desc “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus congue est nisi, non tristique eros scelerisque vitae. Ut sed dolor ornare, ullamcorper eros sit amet, accumsan risus.”
-                  .our-customer-info
-                    .avatar
-                      %a{:href => "#"}
-                        %img{:alt => "", :src => "/images/other/customer1.png"}/
-                    .custom-desc
-                      %h4 Gizelly Gleise
-                      %p Corretora
-              .item
-                .slide-content
-                  .testimonial-desc “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus congue est nisi, non tristique eros scelerisque vitae. Ut sed dolor ornare, ullamcorper eros sit amet, accumsan risus.”
-                  .our-customer-info
-                    .avatar
-                      %a{:href => "#"}
-                        %img{:alt => "", :src => "/images/other/customer1.png"}/
-                    .custom-desc
-                      %h4 Gizelly Gleise
-                      %p Corretora
-              .item
-                .slide-content
-                  .testimonial-desc “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus congue est nisi, non tristique eros scelerisque vitae. Ut sed dolor ornare, ullamcorper eros sit amet, accumsan risus.”
-                  .our-customer-info
-                    .avatar
-                      %a{:href => "#"}
-                        %img{:alt => "", :src => "/images/other/customer1.png"}/
-                    .custom-desc
-                      %h4 Gizelly Gleise
-                      %p Corretora
-              .item
-                .slide-content
-                  .testimonial-desc “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus congue est nisi, non tristique eros scelerisque vitae. Ut sed dolor ornare, ullamcorper eros sit amet, accumsan risus.”
-                  .our-customer-info
-                    .avatar
-                      %a{:href => "#"}
-                        %img{:alt => "", :src => "/images/other/customer1.png"}/
-                    .custom-desc
-                      %h4 Gizelly Gleise
-                      %p Corretora
+          - @properties = Property.where(featured: true).limit(8).order(:created_at)
+          - if @properties.present?
+            %ul
+              %li
+                .property-row
+                  - @properties[0..7].each do |featured|
+                    %article.hentry.has-featured.mod1_home
+                      .property-featured
+                        %a.content-thumb{:href => "#{property_path(featured)}"}
+                          %img.attachment-property-thumb.featured-thumb-home{:alt => "", :src => "#{featured.thumb? ? featured.thumb : '/images/property/property1.jpg'}"}/
+                        %span.property-category.new_name
+                          %a{:href => "#{property_path(featured)}"}
+                            = featured.name
+                        .property-detail.mod-detail
+                          .size
+                            %span
+                              = featured.area
+                              M²
+                          .bedrooms
+                            %span
+                              = featured.rooms
+                          .bathrooms
+                            %span
+                              = featured.suit
+                  -# .property-row
+                  -#   - @properties[2..3].each do |featured|
+                  -#     %article.hentry.has-featured
+                  -#       .property-featured
+                  -#         %a.content-thumb{:href => "#{property_path(featured)}"}
+                  -#           %img.attachment-property-thumb.featured-thumb-home{:alt => "", :src => "#{featured.thumb? ? featured.thumb : '/images/property/property1.jpg'}"}/
+                  -#         %span.property-category.new_name
+                  -#           %a{:href => "#{property_path(featured)}"}
+                  -#             = featured.name
+                  -#         .property-detail
+                  -#           .size
+                  -#             %span
+                  -#               = featured.area
+                  -#               M²
+                  -#           .bedrooms
+                  -#             %span
+                  -#               = featured.rooms
+                  -#           .bathrooms
+                  -#             %span
+                  -#               = featured.suit
+                  -#       .property-wrap
+                  -#         %h2.property-title
+                  -#           %a{:href => "#{property_path(featured)}", :title => "#{featured.name}"}
+                  -#             = featured.group
+                  -#             = featured.number
+                  -#             = featured.block
+                  -#         .property-excerpt
+                  -#           %p
+                  -#             = featured.description
+                  -#       .property-summary
+                  -#         .property-info
+                  -#           .property-price
+                  -#             %span
+                  -#               %span.amount
+                  -#                 = number_to_currency featured.value
+                  -#           .property-action
+                  -#             %a{:href => "#{property_path(featured)}"} Mais Detalhes
