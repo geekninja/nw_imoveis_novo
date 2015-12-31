@@ -1,5 +1,6 @@
 .noo-wrapper
-  / START NOO MAINBODY
+  %section#search-box.wrap.search-box
+    = render 'layouts/site/search'
   .container.noo-mainbody
     .noo-mainbody-inner
       .row.clearfix
@@ -31,49 +32,7 @@
                 %a.caroufredsel-next{:href => "#"}
             .property-summary
               .row
-                .col-md-4
-                  .property-detail
-                    %h4.property-detail-title Detalhes do Imóvel
-                    .property-detail-content
-                      .detail-field.row
-                        %span.col-xs-6.col-md-5.detail-field-label Situação
-                        %span.col-xs-6.col-md-7.detail-field-value
-                          = @property.situation.humanize
-                        %span.col-xs-6.col-md-5.detail-field-label Localização
-                        %span.col-xs-6.col-md-7.detail-field-value
-                          = @property.region
-                        %span.col-xs-6.col-md-5.detail-field-label Valor
-                        %span.col-xs-6.col-md-7.detail-field-value
-                          %span.amount
-                            = number_to_currency @property.value
-                        %span.col-xs-6.col-md-5.detail-field-label Elevador
-                        %span.col-xs-6.col-md-7.detail-field-value
-                          = @property.elevator ? 'Sim' : 'Não'
-                        %span.col-xs-6.col-md-5.detail-field-label Quartos
-                        %span.col-xs-6.col-md-7.detail-field-value
-                          = @property.rooms
-                        %span.col-xs-6.col-md-5.detail-field-label Banheiros
-                        %span.col-xs-6.col-md-7.detail-field-value
-                          = @property.suit
-                        %span.col-xs-6.col-md-5.detail-field-label Sol
-                        %span.col-xs-6.col-md-7.detail-field-value
-                          = @property.sun_position
-                        %span.col-xs-6.col-md-5.detail-field-label Valor M²
-                        %span.col-xs-6.col-md-7.detail-field-value
-                          = number_to_currency @property.value_m2
-                        %span.col-xs-6.col-md-5.detail-field-label Vagas
-                        %span.col-xs-6.col-md-7.detail-field-value
-                          = @property.parking_spaces
-                        %span.col-xs-6.col-md-5.detail-field-label Suites
-                        %span.col-xs-6.col-md-7.detail-field-value
-                          = @property.suit
-                        %span.col-xs-6.col-md-5.detail-field-label Andar
-                        %span.col-xs-6.col-md-7.detail-field-value
-                          = (@property.floor == "0") ? "0" : "#{@property.floor}º"
-                        %span.col-xs-6.col-md-5.detail-field-label Tour
-                        %span.col-xs-6.col-md-7.detail-field-value
-                          %a{:href => "#{@property.link_tour}", :target => "_BLANK"} Confira Aqui
-                .col-md-8
+                .col-md-12
                   .property-desc
                     %h4.property-detail-title Descrição do Imóvel
                     %p
@@ -113,9 +72,49 @@
           .noo-sidebar-inner
             / START FIND PROPERTY
             .block-sidebar.find-property
-              %h3.title-block-sidebar Pesquisar
-              .gsearch
-                =render 'layouts/site/search_box'
+              .property
+                .property-detail
+                  %h4.property-detail-title Detalhes do Imóvel
+                  .property-detail-content
+                    .detail-field.row
+                      %span.col-xs-6.col-md-5.detail-field-label Situação
+                      %span.col-xs-6.col-md-7.detail-field-value
+                        = @property.situation.humanize
+                      %span.col-xs-6.col-md-5.detail-field-label Localização
+                      %span.col-xs-6.col-md-7.detail-field-value
+                        = @property.region
+                      %span.col-xs-6.col-md-5.detail-field-label Valor
+                      %span.col-xs-6.col-md-7.detail-field-value
+                        %span.amount
+                          = number_to_currency @property.value
+                      %span.col-xs-6.col-md-5.detail-field-label Elevador
+                      %span.col-xs-6.col-md-7.detail-field-value
+                        = @property.elevator ? 'Sim' : 'Não'
+                      %span.col-xs-6.col-md-5.detail-field-label Quartos
+                      %span.col-xs-6.col-md-7.detail-field-value
+                        = @property.rooms
+                      %span.col-xs-6.col-md-5.detail-field-label Banheiros
+                      %span.col-xs-6.col-md-7.detail-field-value
+                        = @property.suit
+                      %span.col-xs-6.col-md-5.detail-field-label Sol
+                      %span.col-xs-6.col-md-7.detail-field-value
+                        = @property.sun_position
+                      %span.col-xs-6.col-md-5.detail-field-label Valor M²
+                      %span.col-xs-6.col-md-7.detail-field-value
+                        = number_to_currency @property.value_m2
+                      %span.col-xs-6.col-md-5.detail-field-label Vagas
+                      %span.col-xs-6.col-md-7.detail-field-value
+                        = @property.parking_spaces
+                      %span.col-xs-6.col-md-5.detail-field-label Suites
+                      %span.col-xs-6.col-md-7.detail-field-value
+                        = @property.suit
+                      - if (@property.floor != 0)
+                        %span.col-xs-6.col-md-5.detail-field-label Andar
+                        %span.col-xs-6.col-md-7.detail-field-value
+                          = (@property.floor == 0) ? "Não possui andar" : "#{@property.floor}º"
+                      %span.col-xs-6.col-md-5.detail-field-label Tour
+                      %span.col-xs-6.col-md-7.detail-field-value
+                        %a{:href => "#{@property.link_tour}", :target => "_BLANK"} Confira Aqui
             / END FIND PROPERTY
             / START RECENT PROPERTY
             .block-sidebar.recent-property

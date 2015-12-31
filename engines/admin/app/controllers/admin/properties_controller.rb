@@ -34,7 +34,7 @@ module Admin
 
       if @property.save
         flash[:success] = t :success
-        redirect_to action: "index"
+        redirect_to new_property_property_image_path(@property)
       else
         render :new
       end

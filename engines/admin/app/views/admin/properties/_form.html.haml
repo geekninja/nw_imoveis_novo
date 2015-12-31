@@ -31,7 +31,7 @@
     .col-md-3
       = f.input :region
     .col-md-3
-      = f.input :district
+      = f.input :district,:readonly => true, :input_html => { :value => 'Setor Noroeste' }
   .row
     .col-md-3
       = f.input :group
