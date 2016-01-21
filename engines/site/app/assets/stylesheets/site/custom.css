@@ -55,6 +55,7 @@
 span.new_name, span.new_name a{
   background-color:#19A4BF!important;
   color:#fff!important;
+  font-size:12px;
 }
 span.new_name{
   margin-left: 50px;

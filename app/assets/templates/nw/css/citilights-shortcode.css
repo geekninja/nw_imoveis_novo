@@ -771,7 +771,7 @@
 
 .recent-properties .recent-properties-content .property-row .hentry .property-category {
 	position: absolute;
-	left: 15px;
+	left: -12px;
 	top: 15px;
 	background: rgba(255,255,255,0.85);
 	padding: 0 15px;
