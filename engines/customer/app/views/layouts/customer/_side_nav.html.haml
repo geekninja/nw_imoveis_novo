@@ -4,7 +4,7 @@
     .leftside-navigation
       %ul#nav-accordion.sidebar-menu
         %li
-          %a{:href => "#{root_path}"}
+          %a{:href => "#"}
             %i.fa.fa-dashboard
             %span Visão Geral
         %li.sub-menu
@@ -18,10 +18,3 @@
               %a{:href => "#{customer.new_property_path}"} Novo Imóvel
             %li
               %a{:href => "#{customer.projects_path}"} Meus Empreendimentos
-        %li.sub-menu
-          %a{:href => "javascript:;", :class => "#{(@nav == 'client') ? 'active' : ''}"}
-            %i.fa.fa-laptop
-            %span Mensagens
-          %ul.sub{style: "#{(@nav == 'client') ? 'display: block' : ''}"}
-            %li
-              %a{:href => "#{customer.messages_path}"} Minhas Mensagens

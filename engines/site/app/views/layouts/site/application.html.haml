@@ -11,5 +11,9 @@
       = render 'layouts/site/top_nav'
       = yield
       = render 'layouts/site/footer'
+    #modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "modal", :role => "dialog", :tabindex => "-1"}
+      .modal-dialog
+        .modal-content
+
     %script{:src => "http://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true&libraries=places", :type => "text/javascript"}
     = javascript_include_tag 'site/application'

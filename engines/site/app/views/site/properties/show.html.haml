@@ -66,7 +66,10 @@
               - @property.property_constructors.each do |constructor|
                 .col-sm-6.col-md-2.item-col
                   %img.img-responsive.img-100{:src => "#{constructor.logo_path}"}/
-        / END MAIN CONTENT
+            .property-feature{:style => "overflow: hidden;"}
+              %h4.property-feature-title 
+                Entrar em contato - 
+                = link_to "Clique aqui", property_contact_new_path(@property), remote: true
         / START SIDEBAR
         .noo-sidebar.noo-sidebar-right.col-xs-12.col-md-4
           .noo-sidebar-inner

@@ -1,7 +1,7 @@
 %header.header.fixed-top.clearfix
   / logo start
   .brand
-    %a.logo{:href => "#{root_path}"}
+    %a.logo{:href => "#"}
       %img{:alt => "", :src => "/images/logo-white.png", width: 130}/
   #top_menu.nav.notify-row
     / notification start
@@ -17,7 +17,7 @@
           %b.caret
         %ul.dropdown-menu.extended.logout
           %li
-            %a{:href => "#{main_app.edit_user_registration_path}"}
+            %a{:href => "#{main_app.edit_client_registration_path}"}
               %i.fa.fa-suitcase>
               Minha Conta
           %li

@@ -1,3 +1,3 @@
 class ClientRegistrationsController < Devise::RegistrationsController 
-  layout 'admin/application'
+  layout 'customer/application'
 end

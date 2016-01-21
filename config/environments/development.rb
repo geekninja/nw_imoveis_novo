@@ -37,7 +37,7 @@ Rails.application.configure do
   config.assets.raise_runtime_errors = true
 
   # Raises error for missing translations
-
+=begin
   CarrierWave.configure do|config|
     config.fog_credentials = {
      provider:              'AWS',
@@ -49,4 +49,5 @@ Rails.application.configure do
     config.fog_public = 'false' #WTF?
     config.fog_attributes = {'Cache-Control' => "max-age=#{365.to_i}" }
   end
+=end
 end

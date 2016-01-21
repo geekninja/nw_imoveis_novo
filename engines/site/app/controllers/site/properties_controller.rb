@@ -15,6 +15,17 @@ module Site
       @property = Property.find(params[:id])
     end
 
+    def contact_new
+      @contact  = Site::Contact.new
+      @property = Property.find(params[:property_id])
+    end
+
+    def contact_send
+      @contact  = Site::Contact.new(set_contact_params)
+      @property = Property.find(@contact.property_id)
+      @contact.send_message!
+    end
+
     def property_type
       redirect_to '/404' unless Property.type_properties.keys.include?(params[:property_type])
       @buttons = Button.per_type(params[:property_type])
@@ -50,6 +61,12 @@ module Site
         redirect_to '/404'
       end
 
+    end
+
+    private
+
+    def set_contact_params
+      params.require(:contact).permit(:property_id, :name, :email, :telephone, :message)
     end
   end
 end

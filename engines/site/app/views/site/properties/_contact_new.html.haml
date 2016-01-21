@@ -1,0 +1,22 @@
+.modal-header
+  %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+    %span{"aria-hidden" => "true"} ×
+  %h4#modal.modal-title Entrar em contato
+.modal-body
+  = simple_form_for @contact, url: property_contact_send_path(@property), remote: true do |f|
+    .row
+      .col-md-12
+        = f.input :name, label: 'Nome'
+        = f.input :property_id, as: :hidden, input_html: { value: @property.id }
+    .row
+      .col-md-12
+        = f.input :telephone, label: 'Telefone'
+    .row
+      .col-md-12
+        = f.input :email, label: 'E-mail'
+    .row
+      .col-md-12
+        = f.input :message, as: :text, label: "Mensagem"
+    .row
+      .col-md-12
+        = f.submit "Enviar mensagem", class: 'btn btn-success'

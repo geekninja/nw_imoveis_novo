@@ -17,6 +17,10 @@ body {
     font-size:13px;
     text-rendering:optimizeLegibility;
 }
+input[type="email"], input[type="password"], input[type="text"], input[type="tel"] {
+    color: black !important;
+}
+
 ul li {
     list-style:none;
 }
@@ -95,6 +99,7 @@ a,a:hover,a:focus {
     border:1px solid #eaeaea;
     box-shadow:none;
     font-size:12px;
+    color: black;
 }
 .form-signin .btn-login {
     background:#1fb5ac;
